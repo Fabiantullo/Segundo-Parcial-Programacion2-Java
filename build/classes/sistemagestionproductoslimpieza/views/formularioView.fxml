@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemagestionproductoslimpieza.controllers.FormularioController">
+   <children>
+      <Label layoutX="117.0" layoutY="24.0" text="Datos del Producto">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      
+      <Label layoutX="40.0" layoutY="70.0" text="Nombre Comercial:" />
+      <TextField fx:id="txtNombre" layoutX="40.0" layoutY="90.0" prefHeight="25.0" prefWidth="320.0" promptText="Ej: Desengrasante" />
+      
+      <Label layoutX="40.0" layoutY="130.0" text="Concentracion:" />
+      <TextField fx:id="txtConcentracion" layoutX="40.0" layoutY="150.0" prefHeight="25.0" prefWidth="320.0" promptText="Ej: 500" />
+      
+      <Label layoutX="40.0" layoutY="190.0" text="Vencimiento:" />
+      <DatePicker fx:id="dpVencimiento" layoutX="40.0" layoutY="210.0" prefHeight="25.0" prefWidth="320.0" />
+      
+      <Label layoutX="40.0" layoutY="250.0" text="Tipo:" />
+      <ComboBox fx:id="comboTipo" layoutX="40.0" layoutY="270.0" prefHeight="25.0" prefWidth="320.0" />
+      
+      <Pane fx:id="boxEspecifico" layoutX="40.0" layoutY="310.0" prefHeight="60.0" prefWidth="320.0" visible="false">
+         <children>
+            <Label fx:id="lblEspecifico" layoutY="6.0" text="Dato Específico:" />
+            <TextField fx:id="txtEspecifico" layoutY="27.0" prefHeight="25.0" prefWidth="320.0" />
+         </children>
+      </Pane>
+      
+      <Button fx:id="btnGuardar" layoutX="40.0" layoutY="390.0" mnemonicParsing="false" onAction="#guardar" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Guardar" />
+      <Button layoutX="210.0" layoutY="390.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Cancelar" />
+   </children>
+</AnchorPane>
