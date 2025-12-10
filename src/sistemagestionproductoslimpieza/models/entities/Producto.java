@@ -10,6 +10,13 @@ import sistemagestionproductoslimpieza.exceptions.NombreProductoVacioException;
 import sistemagestionproductoslimpieza.models.enums.TipoProducto;
 import sistemagestionproductoslimpieza.models.interfaces.SerializableJson;
 
+/**
+ * Clase abstracta que representa un producto genérico en el sistema.
+ * 
+ * Gestiona la información básica como nombre comercial, concentración y fecha de vencimiento.
+ * Sirve como base para tipos específicos de productos.
+ * 
+ */
 public abstract class Producto extends SerializableJson {
     
     protected String nombreComercial;
@@ -60,6 +67,13 @@ public abstract class Producto extends SerializableJson {
     }
     
 
+    /**
+     * Verifica si el producto está próximo a vencer.
+     * Un producto se considera próximo a vencer si su fecha de vencimiento es posterior a hoy
+     * pero anterior a 60 días desde hoy.
+     * 
+     * @return true si el producto está próximo a vencer, false en caso contrario.
+     */
     public boolean estaProximoAVencer() {
         LocalDate hoy = LocalDate.now();
         LocalDate limite = hoy.plusDays(60);

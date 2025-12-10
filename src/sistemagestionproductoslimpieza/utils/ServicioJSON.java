@@ -33,7 +33,7 @@ public class ServicioJSON<T> implements IManejadorArchivos<T> {
             List<T> lista = gson.fromJson(br, listType);
             return lista != null ? lista : new ArrayList<>();
         } catch (Exception e) {
-            
+            e.printStackTrace();
             return new ArrayList<>();
         }
     }
@@ -42,8 +42,7 @@ public class ServicioJSON<T> implements IManejadorArchivos<T> {
     public void guardar(String rutaArchivo, List<T> datos) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
             gson.toJson(datos, listType, writer);
-        
-        
+
+        }
     }
-}
 }
